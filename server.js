@@ -6,13 +6,13 @@ const cors = require('cors');
 const app = express();
 
 // Cors 
-
+/*
 const corsOptions = {
     origin: process.env.ALLOWED_CLIENTS.split(',')
     // ['http://localhost:3000', 'http://localhost:5000', 'http://localhost:3300']
 }
 
-app.use(cors(corsOptions));
+app.use(cors(corsOptions));*/
 
 const PORT = process.env.PORT || 3000;
 
