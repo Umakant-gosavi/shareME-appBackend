@@ -6,13 +6,15 @@ const cors = require('cors');
 const app = express();
 
 // Cors 
-/*
-const corsOptions = {
-    origin: process.env.ALLOWED_CLIENTS.split(',')
-    // ['http://localhost:3000', 'http://localhost:5000', 'http://localhost:3300']
-}
+app.use((req, res, next) => {
 
-app.use(cors(corsOptions));*/
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    //res.setHeader('Access-Control-Allow-Methods', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type,Authorization');
+
+    next();     //used for calling next middleware it is necessary
+});
 
 const PORT = process.env.PORT || 3000;
 
